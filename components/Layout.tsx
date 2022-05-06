@@ -1,8 +1,14 @@
+import { useRouter } from "next/router";
+import { useCallback } from "react";
+
 export default function Layout({children, title}) {
+  const router = useRouter();
+  const handleLogoClick = useCallback( () => {
+    router.push(`/`)},[]);
   return (
     <div className="h-full min-h-screen relative">
       <div className="w-full h-72 bg-black rounded-b-[6.25rem] pt-11 px-32 flex justify-center items-center text-center ">
-        <img src="./logo.png" alt="Logo" className="w-36 h-14 absolute left-[10%] top-1 cursor-pointer" />
+        <img src="./logo.png" alt="Logo" className="w-36 h-14 absolute left-[10%] top-1 cursor-pointer" onClick={handleLogoClick}/>
         <h1 className="text-white text-4xl w-8/12">{title}</h1>
       </div>
       {children}

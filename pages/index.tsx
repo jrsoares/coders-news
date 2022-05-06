@@ -1,5 +1,26 @@
 import Head from 'next/head'
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
+import PostCard from '../components/PostCard';
+const posts = [
+  {
+    id: "1",
+    title: "New Apex Legends Weapon Revealed, Havoc Arrives Today",
+    description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    thumbnail: "https://kp-blog.s3.amazonaws.com/wp-content/uploads/2018/07/03165544/Thumbnail-Youtube-o-que-%C3%A9-8-dicas-de-como-fazer-e-principais-ferramentas.jpg",
+  },
+  {
+    id: "2",
+    title: "Fortnite Challenges Have Grown Stale",
+    description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
+    thumbnail: "https://kp-blog.s3.amazonaws.com/wp-content/uploads/2018/07/03165544/Thumbnail-Youtube-o-que-%C3%A9-8-dicas-de-como-fazer-e-principais-ferramentas.jpg",
+  },
+  {
+    id: "3",
+    title: "MDL Macau: VP, EG and Liquid fight for the throne",
+    description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
+    thumbnail: "https://kp-blog.s3.amazonaws.com/wp-content/uploads/2018/07/03165544/Thumbnail-Youtube-o-que-%C3%A9-8-dicas-de-como-fazer-e-principais-ferramentas.jpg",
+  },
+]
 
 export default function Home() {
   return (
@@ -10,13 +31,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className='w-4/5 m-auto bg-white mt-[-42px] rounded-tl-[1.875rem] min-h-[21.5rem] p-6 md:p-14 flex flex-wrap-reverse justify-around '>
-        <div className='w-[35.75rem] max-h-80'>
-          <h2 className='font-bold text-[#232323] text-2xl'>New Apex Legends Weapon Revealed, Havoc Arrives Today</h2>
-          <p>New Apex Legends Weapon Revealed, Havoc Arrives Today</p>
+        <div className='w-[38.75rem] max-h-80'>
+          <h2 className='font-bold text-[#232323] text-2xl mb-[0.625rem]'>New Apex Legends Weapon Revealed, Havoc Arrives Today</h2>
+          <p className='text-lg'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
         </div>
         <div className='w-[35.625rem] max-h-80'>
-          <img className='w-full h-full object-cover rounded' src="" alt="Thumbnail" />
+          <img className='w-full h-full object-cover rounded-[1.25rem]' src="https://kp-blog.s3.amazonaws.com/wp-content/uploads/2018/07/03165544/Thumbnail-Youtube-o-que-%C3%A9-8-dicas-de-como-fazer-e-principais-ferramentas.jpg" width="400px" height="225px" alt="Thumbnail" />
         </div>
+      </div>
+      <div className='max-w-[80%] m-auto flex gap-16 flex-wrap justify-center'>
+        {posts.map((post) => (
+          <PostCard key={`post-${post.id}`} post={post} />
+        ))}
       </div>
     </div>
   )
