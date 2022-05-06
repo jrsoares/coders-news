@@ -1,10 +1,12 @@
-import Head from "next/head";
-import Layout from "../../components/Layout";
-const post =   {
-  id: "1",
-  title: "New Apex Legends Weapon Revealed, Havoc Arrives Today",
-  description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-  thumbnail: "https://kp-blog.s3.amazonaws.com/wp-content/uploads/2018/07/03165544/Thumbnail-Youtube-o-que-%C3%A9-8-dicas-de-como-fazer-e-principais-ferramentas.jpg",
+import Head from 'next/head'
+import Layout from '../../components/Layout'
+const post = {
+  id: '1',
+  title: 'New Apex Legends Weapon Revealed, Havoc Arrives Today',
+  description:
+    "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  thumbnail:
+    'https://kp-blog.s3.amazonaws.com/wp-content/uploads/2018/07/03165544/Thumbnail-Youtube-o-que-%C3%A9-8-dicas-de-como-fazer-e-principais-ferramentas.jpg'
 }
 
 export default function Post() {
@@ -17,13 +19,17 @@ export default function Post() {
       </Head>
       <div className="w-4/5 m-auto min-h-[21.5rem] p-14">
         <div className="w-full">
-          <img src={post.thumbnail} alt="Thumbnail" className="w-full h-[26rem] object-cover rounded-[1.875rem]" />
+          <img
+            src={post.thumbnail}
+            alt="Thumbnail"
+            className="w-full h-[26rem] object-cover rounded-[1.875rem]"
+          />
         </div>
       </div>
     </div>
   )
 }
 
-Post.getLayout = function getLayout(page){
+Post.getLayout = function getLayout(page) {
   return <Layout title={post.title}>{page}</Layout>
 }

@@ -14,6 +14,7 @@ export default function Layout({children, title}) {
       {children}
       <div className="pb-40" />
       <footer className="w-full h-28 absolute bottom-0 bg-black flex justify-center items-center">
+
         <div className="w-4/5 h-4/5 flex items-center flex-wrap">
           <hr className=" w-full border-t border-[#ff2147]" />
           <h3 className="text-white">Copyright Coders Club © 2022 Todos os direitos reservados.</h3>
